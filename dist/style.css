@@ -1,0 +1,68 @@
+.starRating {
+  margin: 2rem;
+}
+.starRating .svgDefinitions symbol {
+  stroke: #3B63F9;
+}
+.starRating .svgDefinitions #FullStar {
+  stroke-dasharray: 0;
+}
+.starRating .svgDefinitions #HalfStar {
+  stroke-dasharray: 33.5, 0 0, 16.5;
+  stroke-dashoffset: 0.75;
+}
+.starRating fieldset {
+  margin: 0;
+  padding: 1rem;
+}
+.starRating label {
+  margin: 0;
+  padding: 0;
+}
+.starRating label .starContainer {
+  width: 3rem;
+  height: 3rem;
+}
+.starRating .rating {
+  border: none;
+  float: left;
+}
+.starRating .rating > input {
+  display: none;
+}
+.starRating .rating > input:checked ~ label svg {
+  fill: #3b63f9;
+}
+.starRating .rating > input:checked ~ label:hover:not([disabled]) svg {
+  fill: #3b63f9;
+}
+.starRating .rating > input:checked ~ label:hover:not([disabled]) ~ label svg {
+  fill: #3b63f9;
+}
+.starRating .rating > input:checked + label:hover:not([disabled]) svg {
+  fill: #3b63f9;
+}
+.starRating .rating > label {
+  float: right;
+}
+.starRating .rating > label .starContainer {
+  margin: 0.3rem;
+}
+.starRating .rating > label svg {
+  fill: #ffffff;
+}
+.starRating .rating > label:hover:not([disabled]) ~ input:checked ~ label svg {
+  fill: #3b63f9;
+}
+.starRating .rating > .half .starContainer {
+  position: absolute;
+}
+.starRating .rating:not(:checked) > label:hover:not([disabled]) svg {
+  fill: #a4c6ff;
+}
+.starRating .rating:not(:checked) > label:hover:not([disabled]) ~ label svg {
+  fill: #a4c6ff;
+}
+.starRating .svgDefinitions {
+  display: none;
+}

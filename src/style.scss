@@ -1,0 +1,140 @@
+$border-color: #3B63F9;
+$filled-color: #3b63f9;
+$empty-color: #ffffff;
+$hover-color: #a4c6ff;
+
+.starRating {
+
+  margin: 2rem;
+
+  .svgDefinitions {
+
+    symbol {
+      stroke: $border-color;
+    }
+
+    #FullStar {
+      stroke-dasharray: 0;
+    }
+
+    #HalfStar {
+      stroke-dasharray: 33.5, 0 0, 16.5;
+      stroke-dashoffset: 0.75;
+    }
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  label {
+    margin: 0;
+    padding: 0;
+
+    .starContainer {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .rating {
+    border: none;
+    float: left;
+
+    > input {
+      display: none;
+
+      &:checked {
+        ~ {
+          label {
+            svg {
+              fill: $filled-color;
+            }
+
+            &:hover:not([disabled]) {
+              svg {
+                fill: $filled-color;
+              }
+
+              ~ {
+                label {
+                  svg {
+                    fill: $filled-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        + {
+          label {
+            &:hover:not([disabled]) {
+              svg {
+                fill: $filled-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > label {
+      float: right;
+
+      .starContainer {
+        margin: 0.3rem;
+      }
+
+      svg {
+        fill: $empty-color;
+      }
+
+      &:hover:not([disabled]) {
+        ~ {
+          input {
+            &:checked {
+              ~ {
+                label {
+                  svg {
+                    fill: $filled-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > .half {
+      .starContainer {
+        position: absolute;
+      }
+    }
+
+    &:not(:checked) {
+      > label {
+        &:hover:not([disabled]) {
+          svg {
+            fill: $hover-color;
+          }
+
+          ~ {
+            label {
+              svg {
+                fill: $hover-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .svgDefinitions {
+    display: none;
+  }
+}
+
